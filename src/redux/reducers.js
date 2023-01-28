@@ -14,7 +14,7 @@ export const rootReducer = (state = initialState, action) => {
     case 'contacts/setContacts':
       return { ...state, contacts: [...action.payload] };
     case 'contacts/setFilters':
-      return { ...state, filters: action.payload };
+      return { ...state, filter: action.payload };
     default:
       return;
   }

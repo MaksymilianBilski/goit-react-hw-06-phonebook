@@ -4,8 +4,6 @@ import { getContacts } from 'redux/selectors';
 import css from './ContactsList.module.css';
 
 export const ContactsList = () => {
-
-  
   const contacts = useSelector(getContacts);
   return (
     <ol className={css.list}>

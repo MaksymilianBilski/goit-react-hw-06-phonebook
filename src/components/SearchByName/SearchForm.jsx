@@ -1,18 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setContacts } from 'redux/actions';
-import { getContacts } from 'redux/selectors';
+import { setFilters } from 'redux/actions';
+import {  getFilter } from 'redux/selectors';
 import css from './SearchForm.module.css';
 
 export const SearchForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
 
   const onFilterChange = e => {
     const input = e.target.value;
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(input.toLowerCase())
-    );
-    dispatch(setContacts(filteredContacts));
+    dispatch(setFilters(input));
   };
 
   return (
@@ -22,7 +19,7 @@ export const SearchForm = () => {
         className={css.input}
         type="text"
         name="input"
-        // value={filter}
+        value={filter}
         onChange={onFilterChange}
       />
     </label>
