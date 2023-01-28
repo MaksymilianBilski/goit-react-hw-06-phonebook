@@ -22,7 +22,6 @@ export const AddContacts = () => {
       alert(`${name.value} is already in contacts`);
       return;
     }
-
     const contact = {
       name: name.value,
       number: number.value,
