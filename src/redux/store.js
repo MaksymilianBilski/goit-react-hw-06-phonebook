@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistedReducer } from './configureStore';
 import persistStore from 'redux-persist/es/persistStore';
+import { persistedReducer } from './configureStore';
 
 export const store = configureStore({
   reducer: persistedReducer,
