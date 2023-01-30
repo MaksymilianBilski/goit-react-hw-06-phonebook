@@ -13,13 +13,9 @@ export const ContactsList = () => {
   return (
     <ol className={css.list}>
       <h5>Contacts</h5>
-      {contactsFilter
-        ? contactsFilter.map(({ id, name, number }) => (
-            <ContactListItem key={id} contact={{ id, name, number }} />
-          ))
-        : contacts.map(({ id, name, number }) => (
-            <ContactListItem key={id} contact={{ id, name, number }} />
-          ))}
+      {contactsFilter.map(({ id, name, number }) => (
+        <ContactListItem key={id} contact={{ id, name, number }} />
+      ))}
     </ol>
   );
 };

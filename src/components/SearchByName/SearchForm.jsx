@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setFilters } from 'redux/actions';
-import {  getFilter } from 'redux/selectors';
+import { setFilters } from 'redux/contactsSlice';
+import { getFilter } from 'redux/selectors';
 import css from './SearchForm.module.css';
 
 export const SearchForm = () => {

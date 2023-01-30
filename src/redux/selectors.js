@@ -2,12 +2,12 @@ export const getContacts = state => {
   if (state === undefined) {
     return;
   }
-  return state.contacts;
+  return state.rootReducer.contacts;
 };
 
 export const getFilter = state => {
   if (state === undefined) {
     return;
   }
-  return state.filter;
+  return state.rootReducer.filter;
 };

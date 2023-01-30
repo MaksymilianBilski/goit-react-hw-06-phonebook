@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
-import { setContacts } from 'redux/actions';
+import { setContacts } from 'redux/contactsSlice';
 import { nanoid } from 'nanoid';
 import css from './Form.module.css';
 
@@ -30,7 +30,6 @@ export const AddContacts = () => {
     //add single contact to local storage
     const newContacts = [...contacts, contact];
     dispatch(setContacts(newContacts));
-    localStorage.setItem('contacts', JSON.stringify(newContacts));
     form.reset();
   };
 

@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setContacts, removeContact } from 'redux/actions';
+import { setContacts, removeContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
 import css from './ContactListItem.module.css';
 
@@ -13,7 +13,6 @@ export const ContactListItem = ({ contact }) => {
     dispatch(removeContact(id));
     const deletedContacts = contacts.filter(contact => contact.id !== id);
     setContacts(deletedContacts);
-    localStorage.setItem('contacts', JSON.stringify(deletedContacts));
   };
 
   return (
