@@ -12,6 +12,7 @@ export const App = () => {
   const contacts = useSelector(getContacts);
   useEffect(() => {
     dispatch(setContacts(contacts));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (
