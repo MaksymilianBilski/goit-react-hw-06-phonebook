@@ -7,8 +7,7 @@ import { ContactsList } from './ContactsList/ContactsList';
 
 export const App = () => {
   const contacts = useSelector(getContacts);
-
-
+  
   return (
     <div>
       <Section title="Phonebook">

@@ -29,7 +29,7 @@ import { nanoid } from 'nanoid';
 import { combineReducers, createSlice } from '@reduxjs/toolkit';
 import filterSlice from './filterSlice';
 
-export const initialState = [];
+const initialState = [];
 
 export const contactsReducer = createSlice({
   name: 'contacts',
@@ -56,7 +56,7 @@ export const contactsReducer = createSlice({
   },
 });
 
-export const { setContacts, addContact, removeContact } =
+export const { setContacts, addContacts, removeContact } =
   contactsReducer.actions;
 
 export const rootReducer = combineReducers({
