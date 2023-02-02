@@ -6,6 +6,7 @@ import css from './ContactsList.module.css';
 export const ContactsList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+  console.log(contacts);
   const contactsFilter = contacts.filter(contact =>
     contact.name.includes(filter)
   );

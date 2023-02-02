@@ -29,36 +29,32 @@ import { nanoid } from 'nanoid';
 import { combineReducers, createSlice } from '@reduxjs/toolkit';
 import filterSlice from './filterSlice';
 
-export const initialState = {
-  contacts: [],
-};
+export const initialState = [];
 
 export const contactsReducer = createSlice({
   name: 'contacts',
-  initialState: initialState.contacts,
+  initialState: initialState,
   reducers: {
     addContacts: {
       reducer(state, action) {
-        state.contacts.push(action.payload);
+        state.push(action.payload);
       },
-      prepare(name, number) {
+      prepare(contact) {
         return {
           payload: {
-            name,
-            number,
+            name: contact.name,
+            number: contact.number,
             id: nanoid(),
           },
         };
       },
     },
     removeContact(state, action) {
-      const index = state.contacts.findIndex(
-        contact => contact.id === action.payload
-      );
-      state.contacts.splice(index, 1);
+      const index = state.findIndex(contact => contact.id === action.payload);
+      state.splice(index, 1);
     },
     setContacts(state, action) {
-      return { ...state.contacts, contacts: [...action.payload] };
+      return state.push(...action.payload);
     },
   },
 });
