@@ -53,9 +53,6 @@ export const contactsReducer = createSlice({
       const index = state.findIndex(contact => contact.id === action.payload);
       state.splice(index, 1);
     },
-    setContacts(state, action) {
-      state.push(...action.payload);
-    },
   },
 });
 
