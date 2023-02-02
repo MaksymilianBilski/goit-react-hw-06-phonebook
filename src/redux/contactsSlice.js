@@ -54,7 +54,7 @@ export const contactsReducer = createSlice({
       state.splice(index, 1);
     },
     setContacts(state, action) {
-      return state.push(...action.payload);
+      state.push(...action.payload);
     },
   },
 });
