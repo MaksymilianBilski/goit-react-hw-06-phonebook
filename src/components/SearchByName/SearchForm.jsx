@@ -9,9 +9,6 @@ export const SearchForm = () => {
 
   const onFilterChange = e => {
     const input = e.target.value;
-    console.log(filter);
-    console.log('input: ', input);
-
     dispatch(setFilters(input));
   };
 
